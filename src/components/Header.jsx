@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
-import Logo from '../../assets/logo/logo_kasa.svg'
+import Logo from '../assets/logo/logo_kasa.svg';
 
 const HeaderWrapper = styled.header`
   display: flex;
