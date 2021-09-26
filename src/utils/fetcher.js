@@ -13,6 +13,10 @@ class Fetcher {
   async getAccomodations() {
     return data;
   }
+
+  async getAccomodation(id) {
+    return data.find(el => el.id === id)
+  }
 }
 
 export default Fetcher
