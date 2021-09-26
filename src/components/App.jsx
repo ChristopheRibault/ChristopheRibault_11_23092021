@@ -3,6 +3,8 @@ import { Route, Switch } from 'react-router-dom';
 import * as Pages from '../pages';
 import Header from './Header';
 
+import '../style/index.sass'
+
 class App extends Component {
 
   render() {
