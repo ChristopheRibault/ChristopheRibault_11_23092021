@@ -1,3 +1,4 @@
+import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
@@ -33,18 +34,20 @@ const StyledLink = styled(Link)`
   }
 `
 
-function Header() {
-  return (
-    <HeaderWrapper className="Header">
-      <Link to='/'>
-        <StyledLogo src={Logo} alt="logo kasa" />
-      </Link>
-      <nav>
-        <StyledLink to='/'>Accueil</StyledLink>
-        <StyledLink to='/about'>A propos</StyledLink>
-      </nav>
-    </HeaderWrapper>
-  );
+class Header extends Component {
+  render() {
+    return (
+      <HeaderWrapper className="Header">
+        <Link to='/'>
+          <StyledLogo src={Logo} alt="logo kasa" />
+        </Link>
+        <nav>
+          <StyledLink to='/'>Accueil</StyledLink>
+          <StyledLink to='/about'>A propos</StyledLink>
+        </nav>
+      </HeaderWrapper>
+    );
+  }
 }
 
 export default Header;
