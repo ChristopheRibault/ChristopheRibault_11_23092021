@@ -6,6 +6,7 @@ import TagList from './TagList';
 import Host from './Host';
 import Dropdown from './Dropdown';
 import Carusel from './Carusel';
+import Footer from './Footer';
 
 export {
   App,
@@ -16,4 +17,5 @@ export {
   Host,
   Dropdown,
   Carusel,
+  Footer,
 };
