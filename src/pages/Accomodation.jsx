@@ -33,8 +33,8 @@ class Accomodation extends Component {
           <RatingStars className='accomodation__rating' rating={data.rating} />
         </div>
         <div className="accomodation__dropdowns">
-          <Dropdown title='Description' content={data.description} />
-          <Dropdown title='Equipements' content={data.equipments} />
+          <Dropdown className='accomodation__dropdown' title='Description' content={data.description} />
+          <Dropdown className='accomodation__dropdown' title='Equipements' content={data.equipments} />
         </div>
       </main>
     );

@@ -21,7 +21,7 @@ class Dropdown extends Component {
       <p className='dropdown__content'>{this.props.content}</p>
 
     return (
-      <div className='dropdown'>
+      <div className={`dropdown ${this.props.className}`}>
         <h3 
           className={`dropdown__title ${this.state.expanded ? 'dropdown__title--expanded' : ''}`}
           onClick={this.toggle.bind(this)}
