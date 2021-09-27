@@ -3,7 +3,7 @@ import { Component } from 'react';
 class Host extends Component {
   render() {
     return (
-      <div className='host'>
+      <div className={`host ${this.props.className}`}>
         <p className='host__name'>{this.props.host?.name}</p>
         <img 
           className='host__picture' 

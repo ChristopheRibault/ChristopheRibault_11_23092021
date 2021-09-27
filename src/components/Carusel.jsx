@@ -27,9 +27,17 @@ class Carusel extends Component {
   render() {
     return (
       <div className='carusel'>
-        <div className='carusel__prev' onClick={this.previous.bind(this)}>X</div>
-        <img src={this.props.pictures[this.state.currentId]} alt='' />
-        <div className='carusel__next' onClick={this.next.bind(this)}>X</div>
+        { this.props.pictures?.length > 1 &&
+          <><div 
+            className='carusel__btn carusel__btn--prev' 
+            onClick={this.previous.bind(this)}
+          ></div>
+          <div 
+            className='carusel__btn carusel__btn--next' 
+            onClick={this.next.bind(this)}
+          ></div></>
+        }
+        <img className='carusel__img' src={this.props.pictures?.[this.state.currentId]} alt='' />
       </div>
     )
   }

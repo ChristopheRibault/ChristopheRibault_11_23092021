@@ -13,8 +13,8 @@ class App extends Component {
         <Header />
         <Switch>
           <Route exact path='/' component={Pages.Home} />
+          <Route path='/about' component={Pages.About} />
           <Route path='/accomodation/:id' component={Pages.Accomodation} />
-          <Route path='/about' component={Pages.Accomodation} />
           <Route component={Pages.Error404} />
         </Switch>
       </div>

@@ -15,15 +15,15 @@ class Dropdown extends Component {
 
   render() {
     const content = Array.isArray(this.props.content) ?
-      <ul className='dropdown__list'>
-        {this.props.content.map(el => <li className='dropdown__list-item'>{el}</li>)}
+      <ul className='dropdown__content'>
+        {this.props.content.map(el => <li>{el}</li>)}
       </ul> :
-      <p className='dropdown__description'>{this.props.content}</p>
+      <p className='dropdown__content'>{this.props.content}</p>
 
     return (
       <div className='dropdown'>
         <h3 
-          className='dropdown__title'
+          className={`dropdown__title ${this.state.expanded ? 'dropdown__title--expanded' : ''}`}
           onClick={this.toggle.bind(this)}
         >{this.props.title}</h3>
         {this.state.expanded && content}

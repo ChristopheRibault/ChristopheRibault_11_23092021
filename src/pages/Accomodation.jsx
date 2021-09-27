@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Fetcher from '../utils/fetcher';
 import { RatingStars, TagList, Host, Dropdown, Carusel } from '../components';
+import { Error404 } from '.';
 
 class Accomodation extends Component {
 
@@ -18,17 +19,23 @@ class Accomodation extends Component {
 
   render() {
     const { data } = this.state;
-    console.log(data);
+    if (!data) {
+      return <Error404/>
+    }
     return (
       <main className='accomodation'>
         <Carusel pictures={data.pictures} />
-        <h2 className='accomodation__title'>{data.title}</h2>
-        <p className='accomodation__location'>{data.location}</p>
-        <TagList tags={data.tags}/>
-        <Host host={data.host} />
-        <RatingStars rating={data.rating} />
-        <Dropdown title='Description' content={data.description} />
-        <Dropdown title='Equipements' content={data.equipments} />
+        <div className='accomodation__grid'>
+          <h2 className='accomodation__title'>{data.title}</h2>
+          <p className='accomodation__location'>{data.location}</p>
+          <TagList className='accomodation__tags' tags={data.tags}/>
+          <Host className='accomodation__host' host={data.host} />
+          <RatingStars className='accomodation__rating' rating={data.rating} />
+        </div>
+        <div className="accomodation__dropdowns">
+          <Dropdown title='Description' content={data.description} />
+          <Dropdown title='Equipements' content={data.equipments} />
+        </div>
       </main>
     );
   }

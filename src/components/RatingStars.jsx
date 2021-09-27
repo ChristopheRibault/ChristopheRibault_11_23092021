@@ -4,7 +4,7 @@ import emptyStar from '../assets/emptyStar.svg';
 
 class RatingStars extends Component {
   render() {
-    return <ul className='accomodation__rating'>
+    return <ul className={this.props.className}>
           {
             new Array(5)
               .fill()
