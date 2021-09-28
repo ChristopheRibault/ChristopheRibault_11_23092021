@@ -1,6 +1,6 @@
 import { App } from '../components';
 import Promise from 'bluebird';
-import {render, fireEvent, waitFor, screen} from '@testing-library/react'
+import {render, fireEvent, screen} from '@testing-library/react'
 
 describe('Footer', () => {
   describe('When the page is loaded', () => {

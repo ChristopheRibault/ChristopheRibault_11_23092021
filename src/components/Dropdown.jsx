@@ -36,12 +36,13 @@ class Dropdown extends Component {
       <ul className='dropdown__content'>
         {this.props.content.map(el => <li>{el}</li>)}
       </ul> :
-      <p className='dropdown__content'>{this.props.content}</p>
+      <p data-testid='dropdown-content' className='dropdown__content'>{this.props.content}</p>
 
     return (
-      <div className={`dropdown ${this.props.className}`}>
+      <div data-testid='dropdown' className={`dropdown ${this.props.className}`}>
         <h3
           tabIndex='0'
+          data-testid='dropdown-title'
           className={`dropdown__title ${this.state.expanded ? 'dropdown__title--expanded' : ''}`}
           onClick={this.toggle.bind(this)}
           onKeyDown={(e) => this.handleKeyDown(e)}
