@@ -3,6 +3,7 @@ import { Dropdown } from '../components';
 
 class About extends Component {
   render() {
+    document.title = 'A propos - Kasa.com'
     return (
       <main className='about-page'>
         <div className='about-banner'></div>

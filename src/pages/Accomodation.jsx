@@ -18,10 +18,13 @@ class Accomodation extends Component {
   }
 
   render() {
+    
     const { data } = this.state;
     if (!data) {
       return <Error404/>
     }
+
+    document.title = `${data.title} - Kasa.com`
     return (
       <main className='accomodation'>
         <Carusel pictures={data.pictures} />

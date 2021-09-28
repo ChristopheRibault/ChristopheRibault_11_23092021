@@ -15,11 +15,11 @@ class Home extends Component {
     new Fetcher().getAccomodations()
       .then(data => this.setState({ data }))
       .catch(console.log)
-      .then(() => console.log(this.state));
-    
   }
 
   render() {
+    document.title = 'Accueil - Kasa.com'
+
     return (
       <main className='home-page'>
         <div className='home-banner'>Chez vous, partout et ailleurs</div>
