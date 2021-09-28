@@ -24,17 +24,41 @@ class Carusel extends Component {
     this.setState({currentId: newId})
   }
 
+  handleKeyDown(e, cb = this.next.bind(this)) {
+    switch (e.code) {
+      case 'Enter':
+        cb();
+        break;
+      case 'ArrowLeft':
+        this.previous();
+        break;
+      case 'ArrowRight':
+        this.next();
+        break;
+      default:
+        break;
+    }
+  }
+
   render() {
     return (
-      <div className='carusel'>
+      <div
+        tabIndex='0'
+        className='carusel'
+        onKeyDown={(e) => this.handleKeyDown(e)}
+      >
         { this.props.pictures?.length > 1 &&
-          <><div 
+          <><div
+            tabIndex='0'
             className='carusel__btn carusel__btn--prev' 
             onClick={this.previous.bind(this)}
+            onKeyDown={(e) => this.handleKeyDown(e, this.previous.bind(this))}
           ></div>
-          <div 
+          <div
+            tabIndex='0'
             className='carusel__btn carusel__btn--next' 
             onClick={this.next.bind(this)}
+            onKeyDown={(e) => this.handleKeyDown(e, this.next.bind(this))}
           ></div></>
         }
         <img className='carusel__img' src={this.props.pictures?.[this.state.currentId]} alt='' />

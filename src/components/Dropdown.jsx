@@ -9,8 +9,26 @@ class Dropdown extends Component {
     }
   }
 
-  toggle() {
-    this.setState({expanded: !this.state.expanded})
+  toggle(bool) {
+    this.setState({
+      expanded: typeof bool === 'boolean' ? bool : !this.state.expanded
+    })
+  }
+
+  handleKeyDown(e) {
+    switch (e.code) {
+      case 'Enter':
+        this.toggle()
+        break;
+      case 'ArrowDown':
+        this.toggle(true)
+        break;
+      case 'ArrowUp':
+        this.toggle(false)
+        break
+      default:
+        break;
+    }
   }
 
   render() {
@@ -22,9 +40,11 @@ class Dropdown extends Component {
 
     return (
       <div className={`dropdown ${this.props.className}`}>
-        <h3 
+        <h3
+          tabIndex='0'
           className={`dropdown__title ${this.state.expanded ? 'dropdown__title--expanded' : ''}`}
           onClick={this.toggle.bind(this)}
+          onKeyDown={(e) => this.handleKeyDown(e)}
         >{this.props.title}</h3>
         {this.state.expanded && content}
       </div>
