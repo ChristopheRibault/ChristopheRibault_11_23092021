@@ -11,8 +11,8 @@ class Header extends Component {
           <img className='logo' src={Logo} alt='logo kasa' />
         </Link>
         <nav>
-          <NavLink className='navlink' exact to='/'>Accueil</NavLink>
-          <NavLink className='navlink' to='/about'>A propos</NavLink>
+          <NavLink data-testid="navLink" className='navlink' exact to='/'>Accueil</NavLink>
+          <NavLink data-testid="navLink" className='navlink' to='/about'>A propos</NavLink>
         </nav>
       </header>
     );
