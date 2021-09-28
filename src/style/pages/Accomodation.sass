@@ -1,5 +1,5 @@
 .accomodation
-  margin: 2rem
+  @include screen-padding
   color: $primary-color
   &__grid
     margin: 2rem 0
@@ -7,30 +7,50 @@
     grid-template-columns: 1fr 200px
     grid-template-rows: repeat(3, 40px)
     width: 100%
+    @include mobile
+      margin: .5rem 0
+      grid-template-columns: 1fr 1fr
+      grid-template-rows: repeat(4, 30px)
   &__title
     margin: 0
     font-size: 1.5em
     grid-column: 1
     grid-row: 1
     align-self: end
+    @include mobile
+      grid-column: 1/span 2
+      font-size: 1em
   &__location
+    font-size: 1em
     grid-column: 1
     grid-row: 2
     align-self: start
     justify-self: start
     margin: 0
+    @include mobile
+      grid-column: 1/span 2
+      font-size: .8em
   &__tags
     grid-column: 1
     grid-row: 3
     align-self: end
     margin: 0
     padding: 0
+    @include mobile
+      grid-column: 1/span 2
+      align-self: center
   &__host
+    font-size: 1em
     grid-column: 2
     grid-row: 1/span 2
     justify-self: end
     display: flex
     flex-flow: row nowrap
+    @include mobile
+      font-size: .7em
+      grid-row: 4
+      justify-self: start
+
   &__rating
     grid-column: 2
     grid-row: 3
@@ -38,6 +58,14 @@
     align-self: start
     margin: 0
     padding: 0
+    @include mobile
+      grid-column: 1
+      grid-row: 4
+      justify-self: start
+      align-self: center
+      img
+        width: 15px
+        height: 15px
   
   &__dropdowns
     display: flex
@@ -45,4 +73,6 @@
     justify-content: space-between
   &__dropdown
     width: 45%
+    @include mobile
+      width: 100%
 
