@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 import Logo from '../assets/logo/logo_kasa.svg';
 
@@ -11,8 +11,8 @@ class Header extends Component {
           <img className='logo' src={Logo} alt='logo kasa' />
         </Link>
         <nav>
-          <Link className='navlink' to='/'>Accueil</Link>
-          <Link className='navlink' to='/about'>A propos</Link>
+          <NavLink className='navlink' exact to='/'>Accueil</NavLink>
+          <NavLink className='navlink' to='/about'>A propos</NavLink>
         </nav>
       </header>
     );
