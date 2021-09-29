@@ -26,7 +26,7 @@ class Accomodation extends Component {
 
     document.title = `${data.title} - Kasa.com`
     return (
-      <main className='accomodation'>
+      <main className='accomodation' data-testid={'accomodation-page'}>
         <Carusel pictures={data.pictures} />
         <div className='accomodation__grid'>
           <h2 className='accomodation__title'>{data.title}</h2>

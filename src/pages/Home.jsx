@@ -21,7 +21,7 @@ class Home extends Component {
     document.title = 'Accueil - Kasa.com'
 
     return (
-      <main className='home-page'>
+      <main className='home-page' data-testid='home-page'>
         <div className='home-banner'>Chez vous, partout et ailleurs</div>
         <section className='accomodation-list'>
           {this.state.data.map(accomodation => <AccomodationThumb key={accomodation.id} data={accomodation}/>)}

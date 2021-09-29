@@ -8,11 +8,11 @@ class Header extends Component {
     return (
       <header className='Header'>
         <Link to='/'>
-          <img className='logo' src={Logo} alt='logo kasa' />
+          <img className='logo' title='logo' src={Logo} alt='logo kasa' />
         </Link>
         <nav>
-          <NavLink data-testid="navLink" className='navlink' exact to='/'>Accueil</NavLink>
-          <NavLink data-testid="navLink" className='navlink' to='/about'>A propos</NavLink>
+          <NavLink data-testid="navLink" title='home' className='navlink' exact to='/'>Accueil</NavLink>
+          <NavLink data-testid="navLink" title='about' className='navlink' to='/about'>A propos</NavLink>
         </nav>
       </header>
     );

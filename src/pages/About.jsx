@@ -5,7 +5,7 @@ class About extends Component {
   render() {
     document.title = 'A propos - Kasa.com'
     return (
-      <main className='about-page'>
+      <main className='about-page' data-testid='about-page'>
         <div className='about-banner'></div>
         <div className='about-dropdowns'>
           <Dropdown
