@@ -1,0 +1,29 @@
+.Header
+  display: flex
+  flex-flow: row nowrap
+  justify-content: space-between
+  align-items: center
+  width: 100%
+  max-width: 1440px
+  @include screen-padding
+  nav
+    display: flex
+    flex-flow: row wrap
+    justify-content: flex-end
+    gap: 10px
+  
+  .logo
+    height: 68px
+    @include mobile
+      height: 47px
+
+  .navlink
+    text-decoration: none
+    color: #FF6060
+    font-size: 1.5em
+    @include mobile
+      text-transform: uppercase
+      font-size: .8em
+
+    &.active
+      text-decoration: underline
