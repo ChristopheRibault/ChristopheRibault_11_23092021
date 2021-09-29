@@ -9,7 +9,7 @@ class RatingStars extends Component {
             new Array(5)
               .fill()
               .map((_, id) => 
-                <img 
+                <img
                   key={`star-${id+1}`}
                   src={id + 1 > this.props.rating ? emptyStar : fullstar} 
                   alt='rating star' 

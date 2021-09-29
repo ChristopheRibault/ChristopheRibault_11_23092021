@@ -43,25 +43,33 @@ class Carusel extends Component {
   render() {
     return (
       <div
+        data-testid='carusel'
         tabIndex='0'
         className='carusel'
         onKeyDown={(e) => this.handleKeyDown(e)}
       >
         { this.props.pictures?.length > 1 &&
           <><div
+            data-testid='carusel-control'
             tabIndex='0'
             className='carusel__btn carusel__btn--prev' 
             onClick={this.previous.bind(this)}
             onKeyDown={(e) => this.handleKeyDown(e, this.previous.bind(this))}
           ></div>
           <div
+            data-testid='carusel-control'
             tabIndex='0'
             className='carusel__btn carusel__btn--next' 
             onClick={this.next.bind(this)}
             onKeyDown={(e) => this.handleKeyDown(e, this.next.bind(this))}
           ></div></>
         }
-        <img className='carusel__img' src={this.props.pictures?.[this.state.currentId]} alt='' />
+        <img 
+          data-testid='carusel-img' 
+          className='carusel__img' 
+          src={this.props.pictures?.[this.state.currentId]} 
+          alt='' 
+        />
       </div>
     )
   }
