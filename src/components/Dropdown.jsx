@@ -34,7 +34,7 @@ class Dropdown extends Component {
   render() {
     const content = Array.isArray(this.props.content) ?
       <ul className='dropdown__content'>
-        {this.props.content.map(el => <li>{el}</li>)}
+        {this.props.content.map((el, i) => <li key={el + i}>{el}</li>)}
       </ul> :
       <p data-testid='dropdown-content' className='dropdown__content'>{this.props.content}</p>
 
