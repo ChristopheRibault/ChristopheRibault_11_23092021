@@ -9,12 +9,20 @@ class Dropdown extends Component {
     };
   }
 
+  /**
+   * Toggle expansion of dropdown
+   * @param {boolean} [bool] true to expand, false to collapse, undefined to toggle
+   */
   toggle(bool) {
     this.setState({
       expanded: typeof bool === 'boolean' ? bool : !this.state.expanded,
     });
   }
 
+  /**
+   * Handle keyboard event to control dropdown
+   * @param {Event} e
+   */
   handleKeyDown(e) {
     switch (e.code) {
       case 'Enter':

@@ -8,6 +8,9 @@ class Carusel extends Component {
     };
   }
 
+  /**
+   * Change currentID to next picture
+   */
   next() {
     const newId = this.state.currentId === this.props.pictures.length - 1 ?
     0 : 
@@ -16,6 +19,9 @@ class Carusel extends Component {
     this.setState({ currentId: newId });
   }
 
+  /**
+   * Change currentID to previous picture
+   */
   previous() {
     const newId = this.state.currentId === 0 ?
     this.props.pictures.length - 1 :
@@ -24,6 +30,11 @@ class Carusel extends Component {
     this.setState({ currentId: newId });
   }
 
+  /**
+   * Handle use of keyboard to control Carusel
+   * @param {Event} e
+   * @param {Function} [cb=this.next] method to be called when 'Enter is pressed' [next or previous]
+   */
   handleKeyDown(e, cb = this.next.bind(this)) {
     switch (e.code) {
       case 'Enter':
