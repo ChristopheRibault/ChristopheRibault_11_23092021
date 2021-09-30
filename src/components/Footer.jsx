@@ -8,7 +8,7 @@ class Footer extends Component {
         <img src={Logo} alt='logo kasa' />
         <p>© 2020 Kasa. All rights reserved</p>
       </footer>
-    )
+    );
   }
 }
 

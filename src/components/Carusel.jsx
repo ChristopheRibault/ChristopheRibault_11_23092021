@@ -4,8 +4,8 @@ class Carusel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: 0
-    }
+      currentId: 0,
+    };
   }
 
   next() {
@@ -13,7 +13,7 @@ class Carusel extends Component {
     0 : 
     this.state.currentId + 1;
 
-    this.setState({currentId: newId})
+    this.setState({ currentId: newId });
   }
 
   previous() {
@@ -21,7 +21,7 @@ class Carusel extends Component {
     this.props.pictures.length - 1 :
     this.state.currentId - 1;
 
-    this.setState({currentId: newId})
+    this.setState({ currentId: newId });
   }
 
   handleKeyDown(e, cb = this.next.bind(this)) {
@@ -71,7 +71,7 @@ class Carusel extends Component {
           alt='' 
         />
       </div>
-    )
+    );
   }
 }
 

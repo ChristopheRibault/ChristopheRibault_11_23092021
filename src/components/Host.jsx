@@ -11,7 +11,7 @@ class Host extends Component {
           alt={this.props.host?.name} 
         />
       </div>
-    )
+    );
   }
 }
 

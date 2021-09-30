@@ -13,10 +13,10 @@ class RatingStars extends Component {
                   key={`star-${id+1}`}
                   src={id + 1 > this.props.rating ? emptyStar : fullstar} 
                   alt='rating star' 
-                />
+                />,
               )
           }
-        </ul>
+        </ul>;
   }
 }
 

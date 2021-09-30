@@ -3,29 +3,29 @@ import { Component } from 'react';
 class Dropdown extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       expanded: false,
-    }
+    };
   }
 
   toggle(bool) {
     this.setState({
-      expanded: typeof bool === 'boolean' ? bool : !this.state.expanded
-    })
+      expanded: typeof bool === 'boolean' ? bool : !this.state.expanded,
+    });
   }
 
   handleKeyDown(e) {
     switch (e.code) {
       case 'Enter':
-        this.toggle()
+        this.toggle();
         break;
       case 'ArrowDown':
-        this.toggle(true)
+        this.toggle(true);
         break;
       case 'ArrowUp':
-        this.toggle(false)
-        break
+        this.toggle(false);
+        break;
       default:
         break;
     }
@@ -36,7 +36,7 @@ class Dropdown extends Component {
       <ul className='dropdown__content'>
         {this.props.content.map((el, i) => <li key={el + i}>{el}</li>)}
       </ul> :
-      <p data-testid='dropdown-content' className='dropdown__content'>{this.props.content}</p>
+      <p data-testid='dropdown-content' className='dropdown__content'>{this.props.content}</p>;
 
     return (
       <div data-testid='dropdown' className={`dropdown ${this.props.className}`}>
@@ -49,7 +49,7 @@ class Dropdown extends Component {
         >{this.props.title}</h3>
         {this.state.expanded && content}
       </div>
-    )
+    );
   }
 }
 
