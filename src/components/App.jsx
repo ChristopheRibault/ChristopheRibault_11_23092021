@@ -2,7 +2,7 @@ import { Component } from 'react';
 import Router from '../Router';
 import { Header, Footer } from '.';
 
-import '../style/index.sass'
+import '../style/index.sass';
 
 class App extends Component {
 

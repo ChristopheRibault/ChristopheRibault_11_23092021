@@ -3,9 +3,12 @@ import data from './data.json';
 
 class Fetcher {
 
+  
+   //TODO: Use Axios to fetch data when backend is ready
+
   constructor() {
     this.axios = axios.create({
-      baseURL: 'https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/Front-End+V2/P9+React+1',
+      baseURL: '',
       timeout: 1000,
     });
   }
@@ -15,8 +18,8 @@ class Fetcher {
   }
 
   async getAccomodation(id) {
-    return data.find(el => el.id === id)
+    return data.find(el => el.id === id);
   }
 }
 
-export default Fetcher
+export default Fetcher;
