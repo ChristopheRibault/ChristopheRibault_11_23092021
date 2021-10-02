@@ -4,26 +4,37 @@ class Carusel extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentId: 0
-    }
+      currentId: 0,
+    };
   }
 
+  /**
+   * Change currentID to next picture
+   */
   next() {
     const newId = this.state.currentId === this.props.pictures.length - 1 ?
     0 : 
     this.state.currentId + 1;
 
-    this.setState({currentId: newId})
+    this.setState({ currentId: newId });
   }
 
+  /**
+   * Change currentID to previous picture
+   */
   previous() {
     const newId = this.state.currentId === 0 ?
     this.props.pictures.length - 1 :
     this.state.currentId - 1;
 
-    this.setState({currentId: newId})
+    this.setState({ currentId: newId });
   }
 
+  /**
+   * Handle use of keyboard to control Carusel
+   * @param {Event} e
+   * @param {Function} [cb=this.next] method to be called when 'Enter is pressed' [next or previous]
+   */
   handleKeyDown(e, cb = this.next.bind(this)) {
     switch (e.code) {
       case 'Enter':
@@ -71,7 +82,7 @@ class Carusel extends Component {
           alt='' 
         />
       </div>
-    )
+    );
   }
 }
 

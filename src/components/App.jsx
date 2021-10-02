@@ -1,9 +1,8 @@
 import { Component } from 'react';
-import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
-import * as Pages from '../pages';
+import Router from '../Router';
 import { Header, Footer } from '.';
 
-import '../style/index.sass'
+import '../style/index.sass';
 
 class App extends Component {
 
@@ -12,12 +11,6 @@ class App extends Component {
       <div className="App">
         <Router>
           <Header />
-            <Switch>
-              <Route exact path='/' component={Pages.Home} />
-              <Route path='/about' component={Pages.About} />
-              <Route path='/accomodation/:id' component={Pages.Accomodation} />
-              <Route component={Pages.Error404} />
-            </Switch>
           <Footer />
         </Router>
       </div>

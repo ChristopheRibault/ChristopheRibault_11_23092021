@@ -6,25 +6,25 @@ import { Error404 } from '.';
 class Accomodation extends Component {
 
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
-      data: {}
-    }
+      data: {},
+    };
   }
 
   componentDidMount() {
     new Fetcher().getAccomodation(this.props.match.params.id)
-      .then(data => this.setState({ data }))
+      .then(data => this.setState({ data }));
   }
 
   render() {
     
     const { data } = this.state;
     if (!data) {
-      return <Error404/>
+      return <Error404/>;
     }
 
-    document.title = `${data.title} - Kasa.com`
+    document.title = `${data.title} - Kasa.com`;
     return (
       <main className='accomodation' data-testid={'accomodation-page'}>
         <Carusel pictures={data.pictures} />

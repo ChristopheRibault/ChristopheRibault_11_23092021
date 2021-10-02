@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 class Error404 extends Component {
   render() {
-    document.title = 'Erreur 404 - Kasa.com'
+    document.title = 'Erreur 404 - Kasa.com';
 
     return (
       <main className='error-page'>
